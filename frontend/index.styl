@@ -1,0 +1,231 @@
+@require "../node_modules/normalize.css/normalize.css"
+
+$primary = #fff
+$secondary = #272727
+
+$danger = #D91F37
+$warning = #FF8C00
+
+html, body, .wrapper
+  margin 0
+  padding 0
+  height 100%
+  overflow hidden
+
+body
+  background-color $secondary
+  color $primary
+  font-family Lato, Helvetica, sans-serif
+  font-size 18px
+
+.wrapper
+  display flex
+  flex-direction column
+
+header
+  background-color $primary
+  color $secondary
+  display flex
+  font-size 24px
+
+  &.setup
+    background-color transparent
+    color $primary
+    a
+      color $primary
+
+  &.unstable
+    background-color $warning
+    color $primary
+
+  &.disconnected
+    background-color $danger
+    color $primary
+
+  .title
+    flex 1
+    padding 10px
+
+  .indicator
+    text-align right
+    flex-basis 150px
+    padding 10px
+    font-weight bold
+
+footer
+  background-color $primary
+  color $secondary
+  display flex
+  flex-basis 50px
+
+  &.setup
+    background-color transparent
+    color $primary
+    a
+      color $primary
+
+  .title
+    flex 1
+    text-align center
+    padding 15px
+
+  .back,
+  .next
+    flex-basis 100px
+    padding 15px
+    color $secondary
+    text-decoration none
+    font-weight bold
+    text-transform uppercase
+
+  .next
+    text-align right
+
+.content
+  display flex
+  flex 1
+  align-items center
+  justify-content center
+  position relative
+
+  .full
+    flex 1
+    height 100%
+    > *
+      display block
+    > .title
+      font-size 24px
+
+  > .close
+    position absolute
+    top 0
+    right 0
+    padding 15px
+    color $primary
+    text-decoration none
+    font-weight bold
+
+.menu
+  display flex
+  flex 1
+  align-items center
+  justify-content center
+  flex-direction column
+
+  .item
+    width 300px
+    height 90px
+    background-color $primary
+    color $secondary
+    text-decoration none
+    margin 20px
+    padding 10px
+    border-radius 10px
+
+  .title
+    font-size 48px
+    text-align center
+    text-transform uppercase
+    font-weight bold
+
+  .description
+    margin-top 10px
+    text-align center
+
+.input
+  flex 0
+  height 100%
+  box-sizing border-box
+  flex-basis 260px
+  background-color $primary
+  color $secondary
+  padding 25px 20px 25px 25px
+
+  display flex
+  flex-direction column
+  align-items center
+
+  input
+    width 185px
+    border none
+    padding 5px 10px
+    background-color $secondary
+    color $primary
+    align-self flex-start
+    font-size 48px
+  .letters,
+  .numberpad,
+  .actions
+    display flex
+    flex-wrap wrap
+    margin-top 20px
+  .numberpad
+    .char
+      min-width 55px
+      height 55px
+      font-size 48px
+  .char
+    padding 5px
+    background-color $secondary
+    color $primary
+    text-decoration none
+    min-width 20px
+    height 20px
+    text-align center
+    margin 5px 5px 0 0
+
+.cassette
+  > *
+    display block
+    max-width 400px
+    margin 5px auto
+    padding 10px 35px 10px 15px
+    text-decoration none
+    background-color $primary
+    color $secondary
+    border-radius 5px
+    position relative
+
+    &.selected::after
+      display block
+      content ''
+      border-radius 0.375rem
+      height 0.75rem
+      width 0.75rem
+      background-color $secondary
+      position absolute
+      top 0.85rem
+      right 0.85rem
+
+  > .title
+    background-color transparent
+    color $primary
+    font-size 24px
+
+  &.info
+    > *
+      padding 5px 20px 5px 0px
+      background-color transparent
+      color $primary
+
+table
+  caption
+    text-align left
+  th
+    text-align left
+
+  &.raw
+    caption
+      padding 5px 15px
+      font-size 24px
+    th
+      padding 5px 15px
+    td
+      padding 5px 15px
+      white-space pre
+      font-family Lucida Console, Courier, monospace
+      font-size 12px
+
+  th.d,
+  td.d
+    text-align right
