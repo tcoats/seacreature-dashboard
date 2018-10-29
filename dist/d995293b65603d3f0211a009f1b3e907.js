@@ -504,8 +504,8 @@ inject('page:default', ql.component({
             ])
           ])
         ]),
-        h('div.block.r2.c1.w1.h1', [
-          h('div.block-unit.full.centered.danger', h('div.block-unit', [
+        h('div.block.r2.c1.w1.h1.danger', [
+          h('div.block-unit.full.centered', h('div.block-unit', [
             h('div.block-value', '134'),
             h('div.block-value-caption', 't of PK screened yesterday')
           ]))
@@ -596,7 +596,7 @@ inject('page:default', ql.component({
             h('div.block-value-caption', 't of PK screened yesterday')
           ]))
         ]),
-        h('div.block.r1.c8.w1.h1', [
+        h('div.block.r1.c8.w1.h1.danger', [
           h('div.block-title', [
             h('h2', 'Production Rate'),
             h('h3', 'Nationwide')
@@ -614,7 +614,13 @@ inject('page:default', ql.component({
           ]),
           h('div.deltaline', deltaline([6, 5, 4, 7, 8, 9, 3]))
         ]),
-        h('div.block.r3.c8.w1.h1'),
+        h('div.block.r3.c8.w1.h1', [
+          h('div.block-title', [
+            h('h2', 'Production Rate'),
+            h('h3', 'Nationwide')
+          ]),
+          h('div.totalline', totalline([6, 5, 4, 7, 8, 9, 3]))
+        ]),
         h('div.block.r4.c8.w1.h1')
       ]
     ]))

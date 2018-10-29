@@ -596,6 +596,18 @@ body {
 .danger span.orange {
   color: #fff;
 }
+.danger svg.deltaline polyline,
+.danger svg.totalline polyline {
+  stroke: #fff;
+}
+.danger svg.deltaline polygon,
+.danger svg.totalline polygon {
+  fill: #f05d61;
+}
+.danger svg.deltaline circle,
+.danger svg.totalline circle {
+  fill: #fff;
+}
 .xpoint5 {
   font-size: 0.5em;
 }
@@ -681,28 +693,21 @@ thead.rotate th > div {
 thead.rotate th > div > span {
   padding: 5px 5px;
 }
-svg.deltaline polyline {
-  fill: none;
-  stroke: #dfe1e8;
-  stroke-width: 0.15em;
-}
-svg.deltaline circle {
-  fill: #dfe1e8;
-}
-div.deltaline {
-  padding: 0.4em;
-}
+svg.deltaline polyline,
 svg.totalline polyline {
   fill: none;
   stroke: #dfe1e8;
   stroke-width: 0.15em;
 }
+svg.deltaline polygon,
 svg.totalline polygon {
   fill: #435059;
 }
+svg.deltaline circle,
 svg.totalline circle {
   fill: #dfe1e8;
 }
+div.deltaline,
 div.totalline {
   padding: 0.4em;
 }

@@ -5,6 +5,7 @@ $primary = #DFE1E8
 $secondary = #A3A8AF
 $tertiary = #435059
 $danger = #A90015
+$dangerlight = #BE404F
 $bg1 = #16232A
 $bg2 = #1A2B34
 $bg3 = #465B66
@@ -167,6 +168,13 @@ body
       color white
     &.orange
       color white
+  svg.deltaline, svg.totalline
+    polyline
+      stroke white
+    polygon
+      fill $red
+    circle
+      fill white
 
 .xpoint5
   font-size 0.5em
@@ -238,17 +246,7 @@ thead.rotate
       > span
         padding 5px 5px
 
-svg.deltaline
-  polyline
-    fill none
-    stroke $primary
-    stroke-width 0.15em
-  circle
-    fill $primary
-div.deltaline
-  padding 0.4em
-
-svg.totalline
+svg.deltaline, svg.totalline
   polyline
     fill none
     stroke $primary
@@ -257,5 +255,5 @@ svg.totalline
     fill $tertiary
   circle
     fill $primary
-div.totalline
+div.deltaline, div.totalline
   padding 0.4em
