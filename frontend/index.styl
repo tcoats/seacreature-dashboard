@@ -2,10 +2,7 @@
 @require "./fonts.styl"
 
 $primary = #DFE1E8
-$secondary = #A3A8AF
-$tertiary = #435059
 $danger = #A90015
-$dangerlight = #BE404F
 $bg1 = #16232A
 $bg2 = #1A2B34
 $bg3 = #465B66
@@ -15,6 +12,95 @@ $blue = #6297D0
 $green = #97C990
 $orange = #FD9148
 $red = #F05D61
+
+// colours
+.green
+  color $green
+  div.bar
+    background-color $green
+.blue
+  color $blue
+  div.bar
+    background-color $blue
+.red
+  color $red
+  div.bar
+    background-color $red
+.purple
+  color $purple
+  div.bar
+    background-color $purple
+.orange
+  color $orange
+  div.bar
+    background-color $orange
+
+.danger
+  background-color $danger
+  color white
+  .block-value-caption
+    color white
+  h3
+    color white
+  th
+    color white
+  div.bar
+    &.green, &.blue, &.red, &.purple, &.orange
+      background-color white
+  svg.deltaline, svg.totalline
+    polyline
+      stroke white
+    polygon
+      fill white
+    circle
+      fill white
+
+// sizes
+.xpoint5
+  font-size 0.5em
+.x1point5
+  font-size 1.5em
+.x2
+  font-size 2em
+.x3
+  font-size 3em
+.x4
+  font-size 4em
+
+table
+  margin 0 auto
+  padding 1em 0
+  border-collapse collapse
+
+thead.rotate
+  th
+    height 10em
+    white-space nowrap
+    > div
+      transform translate(0px, 3em) rotate(270deg)
+      width 2.5em
+      > span
+        padding 5px 5px
+
+tbody th
+  text-align right
+  padding-right 0.8em
+  padding-left 0.8em
+
+th
+  opacity 0.6
+  font-weight normal
+
+td
+  text-align right
+  padding 0.8em
+  font-weight bold
+  &.bar
+    padding 0.2em
+    width 10em
+    text-align left
+  &.deltaline
+    padding 0
 
 *
   box-sizing border-box
@@ -124,7 +210,7 @@ body
     font-weight normal
     padding 0.4em
     margin 0
-    color $secondary
+    opacity 0.6
 
 .block-unit
   &.danger
@@ -144,75 +230,11 @@ body
   line-height 1.5em
   font-weight normal
   padding 0.2em 0.2em 0.5em 0
-  color $secondary
+  opacity 0.6
 
-.danger
-  background-color $danger
-  color white
-  .block-value-caption
-    color white
-  h3
-    color white
-  th
-    color white
-  div.bar
-    background-color white
-  span
-    &.green
-      color white
-    &.blue
-      color white
-    &.red
-      color white
-    &.purple
-      color white
-    &.orange
-      color white
-  svg.deltaline, svg.totalline
-    polyline
-      stroke white
-    polygon
-      fill $red
-    circle
-      fill white
-
-.xpoint5
-  font-size 0.5em
-.x1point5
-  font-size 1.5em
-.x2
-  font-size 2em
-.x3
-  font-size 3em
-.x4
-  font-size 4em
-
-table
-  margin 0 auto
-  padding 1em 0
-  border-collapse collapse
-
-tbody th
-  text-align right
-  padding-right 0.8em
-  padding-left 0.8em
-
-th
-  color $secondary
-  font-weight normal
-
-td
-  text-align right
-  padding 0.7em
-  &.bar
-    padding 0.2em
-    width 10em
-    text-align left
-  &.deltaline
-    padding 0
-
-.bar
+div.bar
   height 1.5em
+  background-color $primary
   &.green
     background-color $green
   &.blue
@@ -224,36 +246,15 @@ td
   &.orange
     background-color $orange
 
-span
-  &.green
-    color $green
-  &.blue
-    color $blue
-  &.red
-    color $red
-  &.purple
-    color $purple
-  &.orange
-    color $orange
-
-thead.rotate
-  th
-    height 10em
-    white-space nowrap
-    > div
-      transform translate(0px, 3em) rotate(270deg)
-      width 2.5em
-      > span
-        padding 5px 5px
-
 svg.deltaline, svg.totalline
   polyline
     fill none
-    stroke $primary
+    stroke currentColor
     stroke-width 0.15em
   polygon
-    fill $tertiary
+    fill currentColor
+    opacity 0.2
   circle
-    fill $primary
+    fill currentColor
 div.deltaline, div.totalline
   padding 0.4em

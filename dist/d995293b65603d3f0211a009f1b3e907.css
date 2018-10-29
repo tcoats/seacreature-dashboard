@@ -368,6 +368,121 @@ template {
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
+.green {
+  color: #97c990;
+}
+.green div.bar {
+  background-color: #97c990;
+}
+.blue {
+  color: #6297d0;
+}
+.blue div.bar {
+  background-color: #6297d0;
+}
+.red {
+  color: #f05d61;
+}
+.red div.bar {
+  background-color: #f05d61;
+}
+.purple {
+  color: #c792c7;
+}
+.purple div.bar {
+  background-color: #c792c7;
+}
+.orange {
+  color: #fd9148;
+}
+.orange div.bar {
+  background-color: #fd9148;
+}
+.danger {
+  background-color: #a90015;
+  color: #fff;
+}
+.danger .block-value-caption {
+  color: #fff;
+}
+.danger h3 {
+  color: #fff;
+}
+.danger th {
+  color: #fff;
+}
+.danger div.bar.green,
+.danger div.bar.blue,
+.danger div.bar.red,
+.danger div.bar.purple,
+.danger div.bar.orange {
+  background-color: #fff;
+}
+.danger svg.deltaline polyline,
+.danger svg.totalline polyline {
+  stroke: #fff;
+}
+.danger svg.deltaline polygon,
+.danger svg.totalline polygon {
+  fill: #fff;
+}
+.danger svg.deltaline circle,
+.danger svg.totalline circle {
+  fill: #fff;
+}
+.xpoint5 {
+  font-size: 0.5em;
+}
+.x1point5 {
+  font-size: 1.5em;
+}
+.x2 {
+  font-size: 2em;
+}
+.x3 {
+  font-size: 3em;
+}
+.x4 {
+  font-size: 4em;
+}
+table {
+  margin: 0 auto;
+  padding: 1em 0;
+  border-collapse: collapse;
+}
+thead.rotate th {
+  height: 10em;
+  white-space: nowrap;
+}
+thead.rotate th > div {
+  transform: translate(0px, 3em) rotate(270deg);
+  width: 2.5em;
+}
+thead.rotate th > div > span {
+  padding: 5px 5px;
+}
+tbody th {
+  text-align: right;
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+}
+th {
+  opacity: 0.6;
+  font-weight: normal;
+}
+td {
+  text-align: right;
+  padding: 0.8em;
+  font-weight: bold;
+}
+td.bar {
+  padding: 0.2em;
+  width: 10em;
+  text-align: left;
+}
+td.deltaline {
+  padding: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -418,7 +533,7 @@ body {
 .dashboard-title p {
   margin: 0.8em 0;
   font-size: 1.4em;
-  color: #a3a8af;
+  color: $secondary;
 }
 .dashboard-logo {
   height: 9.523809523809524%;
@@ -543,7 +658,7 @@ body {
   font-weight: normal;
   padding: 0.4em;
   margin: 0;
-  color: #a3a8af;
+  opacity: 0.6;
 }
 .block-unit.danger {
   border-left: 0.4em solid #fff;
@@ -563,149 +678,41 @@ body {
   line-height: 1.5em;
   font-weight: normal;
   padding: 0.2em 0.2em 0.5em 0;
-  color: #a3a8af;
+  opacity: 0.6;
 }
-.danger {
-  background-color: #a90015;
-  color: #fff;
-}
-.danger .block-value-caption {
-  color: #fff;
-}
-.danger h3 {
-  color: #fff;
-}
-.danger th {
-  color: #fff;
-}
-.danger div.bar {
-  background-color: #fff;
-}
-.danger span.green {
-  color: #fff;
-}
-.danger span.blue {
-  color: #fff;
-}
-.danger span.red {
-  color: #fff;
-}
-.danger span.purple {
-  color: #fff;
-}
-.danger span.orange {
-  color: #fff;
-}
-.danger svg.deltaline polyline,
-.danger svg.totalline polyline {
-  stroke: #fff;
-}
-.danger svg.deltaline polygon,
-.danger svg.totalline polygon {
-  fill: #f05d61;
-}
-.danger svg.deltaline circle,
-.danger svg.totalline circle {
-  fill: #fff;
-}
-.xpoint5 {
-  font-size: 0.5em;
-}
-.x1point5 {
-  font-size: 1.5em;
-}
-.x2 {
-  font-size: 2em;
-}
-.x3 {
-  font-size: 3em;
-}
-.x4 {
-  font-size: 4em;
-}
-table {
-  margin: 0 auto;
-  padding: 1em 0;
-  border-collapse: collapse;
-}
-tbody th {
-  text-align: right;
-  padding-right: 0.8em;
-  padding-left: 0.8em;
-}
-th {
-  color: #a3a8af;
-  font-weight: normal;
-}
-td {
-  text-align: right;
-  padding: 0.7em;
-}
-td.bar {
-  padding: 0.2em;
-  width: 10em;
-  text-align: left;
-}
-td.deltaline {
-  padding: 0;
-}
-.bar {
+div.bar {
   height: 1.5em;
+  background-color: #dfe1e8;
 }
-.bar.green {
+div.bar.green {
   background-color: #97c990;
 }
-.bar.blue {
+div.bar.blue {
   background-color: #6297d0;
 }
-.bar.red {
+div.bar.red {
   background-color: #f05d61;
 }
-.bar.purple {
+div.bar.purple {
   background-color: #c792c7;
 }
-.bar.orange {
+div.bar.orange {
   background-color: #fd9148;
-}
-span.green {
-  color: #97c990;
-}
-span.blue {
-  color: #6297d0;
-}
-span.red {
-  color: #f05d61;
-}
-span.purple {
-  color: #c792c7;
-}
-span.orange {
-  color: #fd9148;
-}
-thead.rotate th {
-  height: 10em;
-  white-space: nowrap;
-}
-thead.rotate th > div {
-  transform: translate(0px, 3em) rotate(270deg);
-  width: 2.5em;
-}
-thead.rotate th > div > span {
-  padding: 5px 5px;
 }
 svg.deltaline polyline,
 svg.totalline polyline {
   fill: none;
-  stroke: #dfe1e8;
+  stroke: currentColor;
   stroke-width: 0.15em;
 }
 svg.deltaline polygon,
 svg.totalline polygon {
-  fill: #435059;
+  fill: currentColor;
+  opacity: 0.2;
 }
 svg.deltaline circle,
 svg.totalline circle {
-  fill: #dfe1e8;
+  fill: currentColor;
 }
 div.deltaline,
 div.totalline {
