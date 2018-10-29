@@ -370,18 +370,23 @@ template {
 }
 .green {
   color: #97c990;
+  fill: #97c990;
 }
 .blue {
   color: #6297d0;
+  fill: #6297d0;
 }
 .red {
   color: #f05d61;
+  fill: #f05d61;
 }
 .purple {
   color: #c792c7;
+  fill: #c792c7;
 }
 .orange {
   color: #fd9148;
+  fill: #fd9148;
 }
 .danger {
   background-color: #a90015;
@@ -419,6 +424,12 @@ template {
 .danger svg.bar rect,
 .danger svg.deltabar rect {
   fill: #fff;
+}
+.danger svg.deltaline line,
+.danger svg.totalline line,
+.danger svg.bar line,
+.danger svg.deltabar line {
+  stroke: #fff;
 }
 .xpoint5 {
   font-size: 0.5em;
@@ -672,26 +683,37 @@ body {
 }
 svg.deltaline polyline,
 svg.totalline polyline,
-svg.bar polyline {
+svg.bar polyline,
+svg.delta polyline {
   fill: none;
   stroke: currentColor;
   stroke-width: 0.15em;
 }
 svg.deltaline polygon,
 svg.totalline polygon,
-svg.bar polygon {
+svg.bar polygon,
+svg.delta polygon {
   fill: currentColor;
   opacity: 0.2;
 }
 svg.deltaline circle,
 svg.totalline circle,
-svg.bar circle {
+svg.bar circle,
+svg.delta circle {
   fill: currentColor;
 }
 svg.deltaline rect,
 svg.totalline rect,
-svg.bar rect {
+svg.bar rect,
+svg.delta rect {
   fill: currentColor;
+}
+svg.deltaline line,
+svg.totalline line,
+svg.bar line,
+svg.delta line {
+  stroke: currentColor;
+  stroke-width: 0.15em;
 }
 div.deltaline,
 div.totalline {

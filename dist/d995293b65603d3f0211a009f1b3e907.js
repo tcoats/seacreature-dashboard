@@ -358,10 +358,10 @@ const deltaline = (values) => {
     if (v < min) min = v
     if (v > max) max = v
   }
-  const y = (v) => 13 - (v - min) / (max - min) * 11
+  const y = (v) => 14 - (v - min) / (max - min) * 12
   const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
   const last = coords[coords.length - 1]
-  return h('svg.deltaline', { attrs: { viewBox: '0 0 100 15', width: '100%', preserveAspectRatio: 'none' } }, [
+  return h('svg.deltaline', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
     h('polyline', { attrs: { points: coords.map((c) =>
       `${c[0]},${c[1]}`).join(' ') } }),
     h('circle', { attrs: { cx: last[0], cy: last[1], r: 2 } })
@@ -388,9 +388,27 @@ const totalline = (values) => {
 }
 
 const bar = (percentage) => {
-  return h('svg.bar', { attrs: { viewBox: '0 0 100 15', width: '100%', preserveAspectRatio: 'none' } }, [
-    h('rect', { attrs: { x: 0, y: 0, width: percentage, height: 15 } })
+  return h('svg.bar', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
+    h('rect', { attrs: { x: 0, y: 0, width: percentage, height: 16 } })
   ])
+}
+
+const deltabar = (up, down) => {
+  const c = [Math.max(down - up, 0), Math.max(up - down, 0)]
+  const children = []
+  if (up > 0) children.push(
+    h('rect.green', { attrs: { x: c[0], y: 0, width: up, height: 8 } }))
+  else {
+    const x = c[0] + (down > 0 ? -1 : 1)
+    children.push(h('line', { attrs: { x1: x, y1: 0, x2: x, y2: 8 } }))
+  }
+  if (down > 0) children.push(
+    h('rect.red', { attrs: { x: c[1], y: 8, width: down, height: 8 } }))
+  else {
+    const x = c[1] + (up > 0 ? -1 : 1)
+    children.push(h('line', { attrs: { x1: x, y1: 8, x2: x, y2: 16 } }))
+  }
+  return h('svg.delta', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, children)
 }
 
 inject('page:default', ql.component({
@@ -539,6 +557,31 @@ inject('page:default', ql.component({
                 h('tr.danger', [
                   h('th', 'Tapioca Meal'),
                   h('td.bar.green', bar(100)),
+                  h('td', '1.9kt')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', deltabar(20, 10)),
+                  h('td', '1.9kt')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', deltabar(10, 60)),
+                  h('td', '1.9kt')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', deltabar(0, 60)),
+                  h('td', '1.9kt')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', deltabar(10, 0)),
+                  h('td', '1.9kt')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', deltabar(0, 0)),
                   h('td', '1.9kt')
                 ])
               ])

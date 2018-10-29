@@ -16,14 +16,19 @@ $red = #F05D61
 // colours
 .green
   color $green
+  fill: $green
 .blue
   color $blue
+  fill: $blue
 .red
   color $red
+  fill: $red
 .purple
   color $purple
+  fill: $purple
 .orange
   color $orange
+  fill: $orange
 
 .danger
   background-color $danger
@@ -43,6 +48,8 @@ $red = #F05D61
       fill white
     rect
       fill white
+    line
+      stroke white
 
 // sizes
 .xpoint5
@@ -221,7 +228,7 @@ body
   padding 0.2em 0.2em 0.5em 0
   opacity 0.6
 
-svg.deltaline, svg.totalline, svg.bar
+svg.deltaline, svg.totalline, svg.bar, svg.delta
   polyline
     fill none
     stroke currentColor
@@ -233,5 +240,8 @@ svg.deltaline, svg.totalline, svg.bar
     fill currentColor
   rect
     fill currentColor
+  line
+    stroke currentColor
+    stroke-width 0.15em
 div.deltaline, div.totalline
   padding 0.4em
