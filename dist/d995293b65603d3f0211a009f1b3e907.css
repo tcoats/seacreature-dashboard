@@ -389,7 +389,7 @@ body {
   width: 100vmax;
   min-width: 622px;
   min-height: 350px;
-  height: calc(100vmax * 0.5625);
+  height: 64em;
   margin: 0 auto;
   padding: calc(100vmax / 96);
   position: relative;
@@ -416,7 +416,7 @@ body {
   line-height: 1em;
 }
 .dashboard-title p {
-  margin: calc(100vmax / 96) 0;
+  margin: 0.8em 0;
   font-size: 1.4em;
   color: #a3a8af;
 }
@@ -433,7 +433,7 @@ body {
 }
 .block {
   background-color: #1a2b34;
-  border: calc(100vmax / 384) solid #16232a;
+  border: calc(100vmax / 500) solid #16232a;
   position: absolute;
 }
 .block.c1 {
@@ -514,45 +514,55 @@ body {
   flex-direction: column;
 }
 .block-title {
-  padding-bottom: calc(100vmax / 128);
+  padding-bottom: 0.4em;
+}
+.block-title h1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 0.4em;
+  margin: 0;
+}
+.block-title h1 + h2,
+.block-title h1 + h3 {
+  padding-top: 0.1em;
 }
 .block-title h2 {
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1em;
-  padding: calc(100vmax / 256);
+  padding: 0.4em;
   margin: 0;
+}
+.block-title h2 + h3 {
+  padding-top: 0.1em;
 }
 .block-title h3 {
   font-size: 1em;
   line-height: 1em;
   font-weight: normal;
-  padding: calc(100vmax / 256);
-  padding-top: 0;
+  padding: 0.4em;
   margin: 0;
   color: #a3a8af;
 }
-.block-title h3:first-child {
-  padding-top: calc(100vmax / 256);
-}
 .block-unit.danger {
-  border-left: calc(100vmax / 256) solid #fff;
+  border-left: 0.4em solid #fff;
 }
 .block-unit.full {
   height: 100%;
 }
 .block-value {
-  font-size: 5em;
+  font-size: 3.8em;
   line-height: 1em;
   text-align: right;
-  padding: calc(100vmax / 196) calc(100vmax / 256) 0 0;
+  padding: 0.2em 0.1em 0 0;
 }
 .block-value-caption {
   text-align: right;
   font-size: 1em;
   line-height: 1.5em;
   font-weight: normal;
-  padding: calc(100vmax / 256) calc(100vmax / 256) calc(100vmax / 110) 0;
+  padding: 0.2em 0.2em 0.5em 0;
   color: #a3a8af;
 }
 .danger {
@@ -568,6 +578,12 @@ body {
 .danger th {
   color: #fff;
 }
+.xpoint5 {
+  font-size: 0.5em;
+}
+.x1point5 {
+  font-size: 1.5em;
+}
 .x2 {
   font-size: 2em;
 }
@@ -579,26 +595,27 @@ body {
 }
 table {
   margin: 0 auto;
-  padding: calc(100vmax / 196) 0;
+  padding: 1em 0;
 }
 tbody th {
   text-align: right;
-  padding-right: calc(100vmax / 240);
+  padding-right: 0.8em;
 }
 th {
   color: #a3a8af;
+  font-weight: normal;
 }
 td {
   text-align: right;
-  padding: calc(100vmax / 240);
+  padding: 0.5em;
 }
 thead.rotate th {
-  height: calc(100vmax / 12);
+  height: 10em;
   white-space: nowrap;
 }
 thead.rotate th > div {
-  transform: translate(0px, calc(100vmax / 42)) rotate(270deg);
-  width: calc(100vmax / 37);
+  transform: translate(0px, 3em) rotate(270deg);
+  width: 2.5em;
 }
 thead.rotate th > div > span {
   padding: 5px 5px;

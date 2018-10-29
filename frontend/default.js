@@ -26,6 +26,10 @@ inject('page:default', ql.component({
           h('div.block-unit.danger', [
             h('div.block-value', '134'),
             h('div.block-value-caption', 't of PK screened yesterday')
+          ]),
+          h('div.block-unit.danger', [
+            h('div.block-value', '134'),
+            h('div.block-value-caption', 't of PK screened yesterday')
           ])
         ]),
         h('div.block.r3.c6.w1.h1', [
@@ -78,16 +82,42 @@ inject('page:default', ql.component({
                   h('td.danger', '1.9k'),
                   h('td', '1.9k'),
                   h('td', '1.9k')
+                ]),
+                h('tr', [
+                  h('th', 'Palm Kernel'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k')
+                ]),
+                h('tr', [
+                  h('th', 'Dried Distiller Grains'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k')
+                ]),
+                h('tr', [
+                  h('th', 'Tapioca Meal'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td.danger', '1.9k'),
+                  h('td', '1.9k'),
+                  h('td', '1.9k')
                 ])
               ])
             ])
           ])
         ]),
         h('div.block.r1.c1.w1.h1', [
-          h('div.block-unit.full.centered', h('div.block-unit', [
-            h('div.block-value', '134'),
-            h('div.block-value-caption', 't of PK screened yesterday')
-          ]))
+          h('div.block-unit.full.centered', [
+            h('div.block-unit', [
+              h('div.block-value', '134'),
+              h('div.block-value-caption', 't of PK screened yesterday')
+            ])
+          ])
         ]),
         h('div.block.r2.c1.w1.h1'),
         h('div.block.r3.c1.w1.h1', [
