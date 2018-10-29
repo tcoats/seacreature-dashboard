@@ -340,6 +340,34 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: 'Lato';
+  src: url("ab8a13f15e3bcdbd6a142779a6ab70c6.woff2") format('woff2'), url("af32bf286e78d8a710e3d8015067f7bb.woff") format('woff'), url("6335aeea0f73cb9eca2eaeff252ff288.ttf") format('truetype');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url("19147f881f77302e2fb7d12ab5531f14.woff2") format('woff2'), url("32e5566b6140720ed1e438856898060e.woff") format('woff'), url("659a1210e9c1848b039be56b2aa73e05.ttf") format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'LatoLight';
+  src: url("efe3d85a3e25e72ababcf55d27cbd360.woff2") format('woff2'), url("848ad17ab06384381e1795145f29022a.woff") format('woff'), url("e08ca04ec7e0f7a52f48f64d80308904.ttf") format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url("6cd6edbb59b67a78121b48bc39a441ba.woff2") format('woff2'), url("432190b5f3d35e14af706091043c873b.woff") format('woff'), url("4e978e911fc5d070deed05d40436ba43.ttf") format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
 * {
   box-sizing: border-box;
 }
@@ -371,6 +399,7 @@ body {
   position: relative;
 }
 .header {
+  font-family: LatoLight, Lato, Helvetica, sans-serif;
   border: calc(100vmax / 384) solid #16232a;
   height: 9.523809523809524%;
   position: absolute;
@@ -380,7 +409,7 @@ body {
   line-height: 1em;
 }
 .block {
-  background-color: #465b66;
+  background-color: #1a2b34;
   border: calc(100vmax / 384) solid #16232a;
   position: absolute;
 }
