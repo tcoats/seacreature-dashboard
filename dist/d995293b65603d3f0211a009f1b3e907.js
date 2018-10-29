@@ -480,8 +480,57 @@ inject('page:default', ql.component({
         h('div.block.r2.c2.w1.h1'),
         h('div.block.r3.c2.w1.h1'),
         h('div.block.r4.c2.w1.h1'),
-        h('div.block.r1.c3.w2.h1'),
-        h('div.block.r1.c5.w1.h1'),
+        h('div.block.r1.c3.w2.h1', [
+          h('div.block-title', [
+            h('h2', 'Product Stock'),
+            h('h3', 'Nationwide')
+          ]),
+          h('div.block-unit', [
+            h('table', [
+              h('tbody', [
+                h('tr', [
+                  h('th', 'Palm Kernel'),
+                  h('td.bar', h('div.bar.green', { style: { width: `${65 / 100 * 9.6}em` } })),
+                  h('td', '1.4kt')
+                ]),
+                h('tr', [
+                  h('th', 'Dried Distiller Grains'),
+                  h('td.bar', h('div.bar.green', { style: { width: `${80 / 100 * 9.6}em` } })),
+                  h('td', '27.5kt')
+                ]),
+                h('tr.danger', [
+                  h('th', 'Tapioca Meal'),
+                  h('td.bar', h('div.bar.green', { style: { width: `${100 / 100 * 9.6}em` } })),
+                  h('td', '1.9kt')
+                ])
+              ])
+            ])
+          ])
+        ]),
+        h('div.block.r1.c5.w1.h1', [
+          h('div.block-title', [
+            h('h2', 'Product Stock'),
+            h('h3', 'Nationwide')
+          ]),
+          h('div.block-unit', [
+            h('table', [
+              h('tbody', [
+                h('tr', [
+                  h('th', 'PK'),
+                  h('td', h('span.green', '+1.4kt   ▲'))
+                ]),
+                h('tr', [
+                  h('th', 'DDG'),
+                  h('td', h('span.red', '-27kt   ▼'))
+                ]),
+                h('tr', [
+                  h('th', 'TAP'),
+                  h('td', h('span.green', '+27kt   ▲'))
+                ])
+              ])
+            ])
+          ])
+        ]),
         h('div.block.r1.c6.w2.h2.x2', [
           h('div.block-unit.full.centered', h('div.block-unit', [
             h('div.block-value', '134'),

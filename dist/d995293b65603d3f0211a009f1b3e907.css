@@ -578,6 +578,24 @@ body {
 .danger th {
   color: #fff;
 }
+.danger div.bar {
+  background-color: #fff;
+}
+.danger span.green {
+  color: #fff;
+}
+.danger span.blue {
+  color: #fff;
+}
+.danger span.red {
+  color: #fff;
+}
+.danger span.purple {
+  color: #fff;
+}
+.danger span.orange {
+  color: #fff;
+}
 .xpoint5 {
   font-size: 0.5em;
 }
@@ -596,10 +614,12 @@ body {
 table {
   margin: 0 auto;
   padding: 1em 0;
+  border-collapse: collapse;
 }
 tbody th {
   text-align: right;
   padding-right: 0.8em;
+  padding-left: 0.8em;
 }
 th {
   color: #a3a8af;
@@ -607,7 +627,45 @@ th {
 }
 td {
   text-align: right;
-  padding: 0.5em;
+  padding: 0.7em;
+}
+td.bar {
+  padding: 0.2em;
+  width: 10em;
+  text-align: left;
+}
+.bar {
+  height: 1.5em;
+}
+.bar.green {
+  background-color: #97c990;
+}
+.bar.blue {
+  background-color: #6297d0;
+}
+.bar.red {
+  background-color: #f05d61;
+}
+.bar.purple {
+  background-color: #c792c7;
+}
+.bar.orange {
+  background-color: #fd9148;
+}
+span.green {
+  color: #97c990;
+}
+span.blue {
+  color: #6297d0;
+}
+span.red {
+  color: #f05d61;
+}
+span.purple {
+  color: #c792c7;
+}
+span.orange {
+  color: #fd9148;
 }
 thead.rotate th {
   height: 10em;

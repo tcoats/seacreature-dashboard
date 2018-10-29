@@ -153,6 +153,19 @@ body
     color white
   th
     color white
+  div.bar
+    background-color white
+  span
+    &.green
+      color white
+    &.blue
+      color white
+    &.red
+      color white
+    &.purple
+      color white
+    &.orange
+      color white
 
 .xpoint5
   font-size 0.5em
@@ -168,10 +181,12 @@ body
 table
   margin 0 auto
   padding 1em 0
+  border-collapse collapse
 
 tbody th
   text-align right
   padding-right 0.8em
+  padding-left 0.8em
 
 th
   color $secondary
@@ -179,7 +194,37 @@ th
 
 td
   text-align right
-  padding 0.5em
+  padding 0.7em
+
+td.bar
+  padding 0.2em
+  width 10em
+  text-align left
+
+.bar
+  height 1.5em
+  &.green
+    background-color $green
+  &.blue
+    background-color $blue
+  &.red
+    background-color $red
+  &.purple
+    background-color $purple
+  &.orange
+    background-color $orange
+
+span
+  &.green
+    color $green
+  &.blue
+    color $blue
+  &.red
+    color $red
+  &.purple
+    color $purple
+  &.orange
+    color $orange
 
 thead.rotate
   th
