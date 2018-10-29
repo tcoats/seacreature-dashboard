@@ -13,91 +13,6 @@ $green = #97C990
 $orange = #FD9148
 $red = #F05D61
 
-// colours
-.green
-  color $green
-  fill: $green
-.blue
-  color $blue
-  fill: $blue
-.red
-  color $red
-  fill: $red
-.purple
-  color $purple
-  fill: $purple
-.orange
-  color $orange
-  fill: $orange
-
-.danger
-  background-color $danger
-  color white
-  .block-value-caption
-    color white
-  h3
-    color white
-  th
-    color white
-  svg.deltaline, svg.totalline, svg.bar, svg.deltabar
-    polyline
-      stroke white
-    polygon
-      fill white
-    circle
-      fill white
-    rect
-      fill white
-    line
-      stroke white
-
-// sizes
-.xpoint5
-  font-size 0.5em
-.x1point5
-  font-size 1.5em
-.x2
-  font-size 2em
-.x3
-  font-size 3em
-.x4
-  font-size 4em
-
-table
-  margin 0 auto
-  padding 1em 0
-  border-collapse collapse
-
-thead.rotate
-  th
-    height 10em
-    white-space nowrap
-    > div
-      transform translate(0px, 3em) rotate(270deg)
-      width 2.5em
-      > span
-        padding 5px 5px
-
-tbody th
-  text-align right
-  padding-right 0.8em
-  padding-left 0.8em
-
-th
-  opacity 0.6
-  font-weight normal
-
-td
-  text-align right
-  padding 0.8em
-  font-weight bold
-  &.bar
-    padding 0.2em
-    width 10em
-    text-align left
-  &.deltaline
-    padding 0
-
 *
   box-sizing border-box
 
@@ -160,6 +75,107 @@ body
   img
     height 100%
 
+// colours
+.green
+  color $green
+  fill $green
+  stroke $green
+.blue
+  color $blue
+  fill $blue
+  stroke $blue
+.red
+  color $red
+  fill $red
+  stroke $red
+.purple
+  color $purple
+  fill $purple
+  stroke $purple
+.orange
+  color $orange
+  fill $orange
+  stroke $orange
+
+.danger
+  background-color $danger
+  color white
+  .block-value-caption
+    color white
+  h3
+    color white
+  th
+    color white
+    border-left 0.4em solid white
+  .green
+    color white
+    fill white
+    stroke white
+  .blue
+    color white
+    fill white
+    stroke white
+  .red
+    color white
+    fill white
+    stroke white
+  .purple
+    color white
+    fill white
+    stroke white
+  .orange
+    color white
+    fill white
+    stroke white
+
+// sizes
+.xpoint5
+  font-size 0.5em
+.x1point5
+  font-size 1.5em
+.x2
+  font-size 2em
+.x3
+  font-size 3em
+.x4
+  font-size 4em
+
+// table
+table
+  margin 0 auto
+  padding 1em 0
+  border-collapse collapse
+
+thead.rotate
+  th
+    height 10em
+    white-space nowrap
+    > div
+      transform translate(0px, 3em) rotate(270deg)
+      width 2.5em
+      > span
+        padding 5px 5px
+
+tbody th
+  text-align right
+  padding-right 0.6em
+  padding-left 0.6em
+
+th
+  opacity 0.6
+  font-weight normal
+
+td
+  text-align right
+  padding 0.6em
+  font-weight bold
+  &.bar
+    padding 0.2em
+    width 10em
+    text-align left
+  &.deltaline
+    padding 0
+
 .block
   background-color $bg2
   border calc(100vmax / 500) solid $bg1
@@ -190,6 +206,7 @@ body
     margin 0
     & + h2, & + h3
       padding-top 0.1em
+      margin-top -0.3em
 
   h2
     font-size 1.2em
@@ -199,6 +216,7 @@ body
     margin 0
     & + h3
       padding-top 0em
+      margin-top -0.3em
 
   h3
     font-size 1em
@@ -243,5 +261,5 @@ svg.deltaline, svg.totalline, svg.bar, svg.delta
   line
     stroke currentColor
     stroke-width 0.15em
-div.deltaline, div.totalline
+div.deltaline, div.totalline, div.bar, div.delta
   padding 0.4em

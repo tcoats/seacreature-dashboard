@@ -368,122 +368,6 @@ template {
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
-.green {
-  color: #97c990;
-  fill: #97c990;
-}
-.blue {
-  color: #6297d0;
-  fill: #6297d0;
-}
-.red {
-  color: #f05d61;
-  fill: #f05d61;
-}
-.purple {
-  color: #c792c7;
-  fill: #c792c7;
-}
-.orange {
-  color: #fd9148;
-  fill: #fd9148;
-}
-.danger {
-  background-color: #a90015;
-  color: #fff;
-}
-.danger .block-value-caption {
-  color: #fff;
-}
-.danger h3 {
-  color: #fff;
-}
-.danger th {
-  color: #fff;
-}
-.danger svg.deltaline polyline,
-.danger svg.totalline polyline,
-.danger svg.bar polyline,
-.danger svg.deltabar polyline {
-  stroke: #fff;
-}
-.danger svg.deltaline polygon,
-.danger svg.totalline polygon,
-.danger svg.bar polygon,
-.danger svg.deltabar polygon {
-  fill: #fff;
-}
-.danger svg.deltaline circle,
-.danger svg.totalline circle,
-.danger svg.bar circle,
-.danger svg.deltabar circle {
-  fill: #fff;
-}
-.danger svg.deltaline rect,
-.danger svg.totalline rect,
-.danger svg.bar rect,
-.danger svg.deltabar rect {
-  fill: #fff;
-}
-.danger svg.deltaline line,
-.danger svg.totalline line,
-.danger svg.bar line,
-.danger svg.deltabar line {
-  stroke: #fff;
-}
-.xpoint5 {
-  font-size: 0.5em;
-}
-.x1point5 {
-  font-size: 1.5em;
-}
-.x2 {
-  font-size: 2em;
-}
-.x3 {
-  font-size: 3em;
-}
-.x4 {
-  font-size: 4em;
-}
-table {
-  margin: 0 auto;
-  padding: 1em 0;
-  border-collapse: collapse;
-}
-thead.rotate th {
-  height: 10em;
-  white-space: nowrap;
-}
-thead.rotate th > div {
-  transform: translate(0px, 3em) rotate(270deg);
-  width: 2.5em;
-}
-thead.rotate th > div > span {
-  padding: 5px 5px;
-}
-tbody th {
-  text-align: right;
-  padding-right: 0.8em;
-  padding-left: 0.8em;
-}
-th {
-  opacity: 0.6;
-  font-weight: normal;
-}
-td {
-  text-align: right;
-  padding: 0.8em;
-  font-weight: bold;
-}
-td.bar {
-  padding: 0.2em;
-  width: 10em;
-  text-align: left;
-}
-td.deltaline {
-  padding: 0;
-}
 * {
   box-sizing: border-box;
 }
@@ -546,6 +430,123 @@ body {
 }
 .dashboard-logo img {
   height: 100%;
+}
+.green {
+  color: #97c990;
+  fill: #97c990;
+  stroke: #97c990;
+}
+.blue {
+  color: #6297d0;
+  fill: #6297d0;
+  stroke: #6297d0;
+}
+.red {
+  color: #f05d61;
+  fill: #f05d61;
+  stroke: #f05d61;
+}
+.purple {
+  color: #c792c7;
+  fill: #c792c7;
+  stroke: #c792c7;
+}
+.orange {
+  color: #fd9148;
+  fill: #fd9148;
+  stroke: #fd9148;
+}
+.danger {
+  background-color: #a90015;
+  color: #fff;
+}
+.danger .block-value-caption {
+  color: #fff;
+}
+.danger h3 {
+  color: #fff;
+}
+.danger th {
+  color: #fff;
+  border-left: 0.4em solid #fff;
+}
+.danger .green {
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
+}
+.danger .blue {
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
+}
+.danger .red {
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
+}
+.danger .purple {
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
+}
+.danger .orange {
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
+}
+.xpoint5 {
+  font-size: 0.5em;
+}
+.x1point5 {
+  font-size: 1.5em;
+}
+.x2 {
+  font-size: 2em;
+}
+.x3 {
+  font-size: 3em;
+}
+.x4 {
+  font-size: 4em;
+}
+table {
+  margin: 0 auto;
+  padding: 1em 0;
+  border-collapse: collapse;
+}
+thead.rotate th {
+  height: 10em;
+  white-space: nowrap;
+}
+thead.rotate th > div {
+  transform: translate(0px, 3em) rotate(270deg);
+  width: 2.5em;
+}
+thead.rotate th > div > span {
+  padding: 5px 5px;
+}
+tbody th {
+  text-align: right;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+}
+th {
+  opacity: 0.6;
+  font-weight: normal;
+}
+td {
+  text-align: right;
+  padding: 0.6em;
+  font-weight: bold;
+}
+td.bar {
+  padding: 0.2em;
+  width: 10em;
+  text-align: left;
+}
+td.deltaline {
+  padding: 0;
 }
 .block {
   background-color: #1a2b34;
@@ -642,6 +643,7 @@ body {
 .block-title h1 + h2,
 .block-title h1 + h3 {
   padding-top: 0.1em;
+  margin-top: -0.3em;
 }
 .block-title h2 {
   font-size: 1.2em;
@@ -652,6 +654,7 @@ body {
 }
 .block-title h2 + h3 {
   padding-top: 0em;
+  margin-top: -0.3em;
 }
 .block-title h3 {
   font-size: 1em;
@@ -716,6 +719,8 @@ svg.delta line {
   stroke-width: 0.15em;
 }
 div.deltaline,
-div.totalline {
+div.totalline,
+div.bar,
+div.delta {
   padding: 0.4em;
 }
