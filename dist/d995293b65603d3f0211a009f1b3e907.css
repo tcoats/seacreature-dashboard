@@ -371,32 +371,17 @@ template {
 .green {
   color: #97c990;
 }
-.green div.bar {
-  background-color: #97c990;
-}
 .blue {
   color: #6297d0;
-}
-.blue div.bar {
-  background-color: #6297d0;
 }
 .red {
   color: #f05d61;
 }
-.red div.bar {
-  background-color: #f05d61;
-}
 .purple {
   color: #c792c7;
 }
-.purple div.bar {
-  background-color: #c792c7;
-}
 .orange {
   color: #fd9148;
-}
-.orange div.bar {
-  background-color: #fd9148;
 }
 .danger {
   background-color: #a90015;
@@ -411,23 +396,28 @@ template {
 .danger th {
   color: #fff;
 }
-.danger div.bar.green,
-.danger div.bar.blue,
-.danger div.bar.red,
-.danger div.bar.purple,
-.danger div.bar.orange {
-  background-color: #fff;
-}
 .danger svg.deltaline polyline,
-.danger svg.totalline polyline {
+.danger svg.totalline polyline,
+.danger svg.bar polyline,
+.danger svg.deltabar polyline {
   stroke: #fff;
 }
 .danger svg.deltaline polygon,
-.danger svg.totalline polygon {
+.danger svg.totalline polygon,
+.danger svg.bar polygon,
+.danger svg.deltabar polygon {
   fill: #fff;
 }
 .danger svg.deltaline circle,
-.danger svg.totalline circle {
+.danger svg.totalline circle,
+.danger svg.bar circle,
+.danger svg.deltabar circle {
+  fill: #fff;
+}
+.danger svg.deltaline rect,
+.danger svg.totalline rect,
+.danger svg.bar rect,
+.danger svg.deltabar rect {
   fill: #fff;
 }
 .xpoint5 {
@@ -680,38 +670,27 @@ body {
   padding: 0.2em 0.2em 0.5em 0;
   opacity: 0.6;
 }
-div.bar {
-  height: 1.5em;
-  background-color: #dfe1e8;
-}
-div.bar.green {
-  background-color: #97c990;
-}
-div.bar.blue {
-  background-color: #6297d0;
-}
-div.bar.red {
-  background-color: #f05d61;
-}
-div.bar.purple {
-  background-color: #c792c7;
-}
-div.bar.orange {
-  background-color: #fd9148;
-}
 svg.deltaline polyline,
-svg.totalline polyline {
+svg.totalline polyline,
+svg.bar polyline {
   fill: none;
   stroke: currentColor;
   stroke-width: 0.15em;
 }
 svg.deltaline polygon,
-svg.totalline polygon {
+svg.totalline polygon,
+svg.bar polygon {
   fill: currentColor;
   opacity: 0.2;
 }
 svg.deltaline circle,
-svg.totalline circle {
+svg.totalline circle,
+svg.bar circle {
+  fill: currentColor;
+}
+svg.deltaline rect,
+svg.totalline rect,
+svg.bar rect {
   fill: currentColor;
 }
 div.deltaline,

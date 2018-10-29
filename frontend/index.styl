@@ -16,24 +16,14 @@ $red = #F05D61
 // colours
 .green
   color $green
-  div.bar
-    background-color $green
 .blue
   color $blue
-  div.bar
-    background-color $blue
 .red
   color $red
-  div.bar
-    background-color $red
 .purple
   color $purple
-  div.bar
-    background-color $purple
 .orange
   color $orange
-  div.bar
-    background-color $orange
 
 .danger
   background-color $danger
@@ -44,15 +34,14 @@ $red = #F05D61
     color white
   th
     color white
-  div.bar
-    &.green, &.blue, &.red, &.purple, &.orange
-      background-color white
-  svg.deltaline, svg.totalline
+  svg.deltaline, svg.totalline, svg.bar, svg.deltabar
     polyline
       stroke white
     polygon
       fill white
     circle
+      fill white
+    rect
       fill white
 
 // sizes
@@ -232,21 +221,7 @@ body
   padding 0.2em 0.2em 0.5em 0
   opacity 0.6
 
-div.bar
-  height 1.5em
-  background-color $primary
-  &.green
-    background-color $green
-  &.blue
-    background-color $blue
-  &.red
-    background-color $red
-  &.purple
-    background-color $purple
-  &.orange
-    background-color $orange
-
-svg.deltaline, svg.totalline
+svg.deltaline, svg.totalline, svg.bar
   polyline
     fill none
     stroke currentColor
@@ -255,6 +230,8 @@ svg.deltaline, svg.totalline
     fill currentColor
     opacity 0.2
   circle
+    fill currentColor
+  rect
     fill currentColor
 div.deltaline, div.totalline
   padding 0.4em

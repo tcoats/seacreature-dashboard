@@ -38,6 +38,12 @@ const totalline = (values) => {
   ])
 }
 
+const bar = (percentage) => {
+  return h('svg.bar', { attrs: { viewBox: '0 0 100 15', width: '100%', preserveAspectRatio: 'none' } }, [
+    h('rect', { attrs: { x: 0, y: 0, width: percentage, height: 15 } })
+  ])
+}
+
 inject('page:default', ql.component({
   query: (state, params) => {
     return {}
@@ -163,7 +169,7 @@ inject('page:default', ql.component({
         ]),
         h('div.block.r1.c2.w1.h1'),
         h('div.block.r2.c2.w1.h1'),
-        h('div.block.r3.c1.w2.h2.blue', [
+        h('div.block.r3.c1.w2.h2', [
           h('div.block-title', [
             h('h2', 'Production Rate'),
             h('h3', 'Per day over the last month')
@@ -173,7 +179,7 @@ inject('page:default', ql.component({
               h('tbody', [
                 h('tr', [
                   h('th', 'Palm Kernel'),
-                  h('td.bar', h('div.bar', { style: { width: `${65 / 100 * 9.6}em` } })),
+                  h('td.bar', bar(65)),
                   h('td', '1.4kt')
                 ]),
                 h('tr', [
@@ -183,7 +189,7 @@ inject('page:default', ql.component({
                 ]),
                 h('tr.danger', [
                   h('th', 'Tapioca Meal'),
-                  h('td.bar', h('div.bar.green', { style: { width: `${100 / 100 * 9.6}em` } })),
+                  h('td.bar.green', bar(100)),
                   h('td', '1.9kt')
                 ])
               ])
@@ -200,17 +206,17 @@ inject('page:default', ql.component({
               h('tbody', [
                 h('tr', [
                   h('th', 'Palm Kernel'),
-                  h('td.bar', h('div.bar.green', { style: { width: `${65 / 100 * 9.6}em` } })),
+                  h('td.bar.green', bar(65)),
                   h('td', '1.4kt')
                 ]),
                 h('tr', [
                   h('th', 'Dried Distiller Grains'),
-                  h('td.bar', h('div.bar.green', { style: { width: `${80 / 100 * 9.6}em` } })),
+                  h('td.bar.green', bar(80)),
                   h('td', '27.5kt')
                 ]),
                 h('tr.danger', [
                   h('th', 'Tapioca Meal'),
-                  h('td.bar', h('div.bar.green', { style: { width: `${100 / 100 * 9.6}em` } })),
+                  h('td.bar.green', bar(100)),
                   h('td', '1.9kt')
                 ])
               ])
