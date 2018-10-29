@@ -515,6 +515,30 @@ table {
   padding: 1em 0;
   border-collapse: collapse;
 }
+table.comparison {
+  padding: 0;
+  border-collapse: separate;
+  border-spacing: 0 2em;
+}
+table.comparison .block-value,
+table.comparison .block-value-small {
+  padding-top: 0;
+}
+table.comparison .block-value-caption {
+  padding-bottom: 0;
+}
+table.comparison td {
+  padding: 0 1em;
+}
+table.comparison td + td {
+  border-left: 0.15em solid #dfe1e8;
+}
+table.comparison td + td,
+table.comparison td + td .block-value,
+table.comparison td + td .block-value-small,
+table.comparison td + td .block-value-caption {
+  text-align: left;
+}
 thead.rotate th {
   height: 10em;
   white-space: nowrap;
@@ -675,6 +699,13 @@ td.deltaline {
   line-height: 1em;
   text-align: right;
   padding: 0.2em 0.1em 0 0;
+}
+.block-value-small {
+  font-size: 1.5em;
+  line-height: 4.25em;
+  height: 2.53em;
+  text-align: right;
+  padding: 0.51em 0.25em 0 0;
 }
 .block-value-caption {
   text-align: right;

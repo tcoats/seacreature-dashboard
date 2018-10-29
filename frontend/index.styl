@@ -146,6 +146,21 @@ table
   padding 1em 0
   border-collapse collapse
 
+table.comparison
+  padding 0
+  border-collapse separate
+  border-spacing 0 2em
+  .block-value, .block-value-small
+    padding-top 0
+  .block-value-caption
+    padding-bottom 0
+  td
+    padding 0 1em
+  td + td
+    border-left 0.15em solid $primary
+    &, .block-value, .block-value-small, .block-value-caption
+      text-align left
+
 thead.rotate
   th
     height 10em
@@ -237,6 +252,13 @@ td
   line-height 1em
   text-align right
   padding 0.2em 0.1em 0 0
+
+.block-value-small
+  font-size 1.5em
+  line-height 4.25em
+  height 2.53em
+  text-align right
+  padding 0.51em 0.25em 0 0
 
 .block-value-caption
   text-align right
