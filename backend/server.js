@@ -12,13 +12,8 @@ const httpServer = http.createServer(app)
 inject('httpServer', httpServer)
 app.use(require('compression')())
 const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({
-  limit: '50mb',
-  extended: true
-}))
-app.use(bodyParser.json({
-  limit: '50mb'
-}))
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
+app.use(bodyParser.json({ limit: '50mb' }))
 app.set('json spaces', 2)
 
 const url = require('url')
