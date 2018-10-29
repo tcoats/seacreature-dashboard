@@ -143,3 +143,37 @@ body
     color white
   h3
     color white
+  th
+    color white
+
+.x2
+  font-size 2em
+.x3
+  font-size 3em
+.x4
+  font-size 4em
+
+table
+  margin 0 auto
+  padding calc(100vmax / 196) 0
+
+tbody th
+  text-align right
+  padding-right calc(100vmax / 240)
+
+th
+  color $secondary
+
+td
+  text-align right
+  padding calc(100vmax / 240)
+
+thead.rotate
+  th
+    height calc(100vmax / 12)
+    white-space nowrap
+    > div
+      transform translate(0px, calc(100vmax / 42)) rotate(270deg)
+      width calc(100vmax / 37)
+      > span
+        padding 5px 5px
