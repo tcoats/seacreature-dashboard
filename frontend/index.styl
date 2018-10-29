@@ -3,6 +3,7 @@
 
 $primary = #DFE1E8
 $secondary = #A3A8AF
+$tertiary = #435059
 $danger = #A90015
 $bg1 = #16232A
 $bg2 = #1A2B34
@@ -114,7 +115,7 @@ body
     padding 0.4em
     margin 0
     & + h3
-      padding-top 0.1em
+      padding-top 0em
 
   h3
     font-size 1em
@@ -195,11 +196,12 @@ th
 td
   text-align right
   padding 0.7em
-
-td.bar
-  padding 0.2em
-  width 10em
-  text-align left
+  &.bar
+    padding 0.2em
+    width 10em
+    text-align left
+  &.deltaline
+    padding 0
 
 .bar
   height 1.5em
@@ -235,3 +237,25 @@ thead.rotate
       width 2.5em
       > span
         padding 5px 5px
+
+svg.deltaline
+  polyline
+    fill none
+    stroke $primary
+    stroke-width 0.15em
+  circle
+    fill $primary
+div.deltaline
+  padding 0.4em
+
+svg.totalline
+  polyline
+    fill none
+    stroke $primary
+    stroke-width 0.15em
+  polygon
+    fill $tertiary
+  circle
+    fill $primary
+div.totalline
+  padding 0.4em

@@ -535,7 +535,7 @@ body {
   margin: 0;
 }
 .block-title h2 + h3 {
-  padding-top: 0.1em;
+  padding-top: 0em;
 }
 .block-title h3 {
   font-size: 1em;
@@ -634,6 +634,9 @@ td.bar {
   width: 10em;
   text-align: left;
 }
+td.deltaline {
+  padding: 0;
+}
 .bar {
   height: 1.5em;
 }
@@ -677,4 +680,29 @@ thead.rotate th > div {
 }
 thead.rotate th > div > span {
   padding: 5px 5px;
+}
+svg.deltaline polyline {
+  fill: none;
+  stroke: #dfe1e8;
+  stroke-width: 0.15em;
+}
+svg.deltaline circle {
+  fill: #dfe1e8;
+}
+div.deltaline {
+  padding: 0.4em;
+}
+svg.totalline polyline {
+  fill: none;
+  stroke: #dfe1e8;
+  stroke-width: 0.15em;
+}
+svg.totalline polygon {
+  fill: #435059;
+}
+svg.totalline circle {
+  fill: #dfe1e8;
+}
+div.totalline {
+  padding: 0.4em;
 }
