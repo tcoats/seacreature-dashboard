@@ -1,38 +1,9 @@
 @require "../node_modules/normalize.css/normalize.css"
-
-@font-face {
-  font-family 'Lato'
-  src url('../fonts/LatoLatin-Bold.woff2') format('woff2'), url('../fonts/LatoLatin-Bold.woff') format('woff'), url('../fonts/LatoLatin-Bold.ttf') format('truetype')
-  font-style normal
-  font-weight bold
-  text-rendering optimizeLegibility
-}
-
-@font-face {
-  font-family 'Lato'
-  src url('../fonts/LatoLatin-Italic.woff2') format('woff2'), url('../fonts/LatoLatin-Italic.woff') format('woff'), url('../fonts/LatoLatin-Italic.ttf') format('truetype')
-  font-style italic
-  font-weight normal
-  text-rendering optimizeLegibility
-}
-
-@font-face {
-  font-family 'LatoLight'
-  src url('../fonts/LatoLatin-Light.woff2') format('woff2'), url('../fonts/LatoLatin-Light.woff') format('woff'), url('../fonts/LatoLatin-Light.ttf') format('truetype')
-  font-style normal
-  font-weight normal
-  text-rendering optimizeLegibility
-}
-
-@font-face {
-  font-family 'Lato'
-  src url('../fonts/LatoLatin-Regular.woff2') format('woff2'), url('../fonts/LatoLatin-Regular.woff') format('woff'), url('../fonts/LatoLatin-Regular.ttf') format('truetype')
-  font-style normal
-  font-weight normal
-  text-rendering optimizeLegibility
-}
+@require "./fonts.styl"
 
 $primary = #DFE1E8
+$secondary = #A3A8AF
+$danger = #A90015
 $bg1 = #16232A
 $bg2 = #1A2B34
 $bg3 = #465B66
@@ -56,31 +27,54 @@ body
   color $primary
   font-family Lato, Helvetica, sans-serif
   font-size 18px
+  display flex
+  align-items center
 
 .wrapper
   width 100vmax
+  min-width 622px
+  min-height 350px
   height calc(100vmax * 0.5625)
   margin 0 auto
   padding calc(100vmax / 96)
   position relative
-  font-size calc(100vmax * 0.5625 / 45)
+  font-size calc(100vmax * 0.5625 / 64)
   line-height 1em
 
-.grid
+.dashboard
   width 100%
   height 100%
   margin 0 auto
   position relative
 
-.header
-  font-family LatoLight, Lato, Helvetica, sans-serif
-  border calc(100vmax / 384) solid $bg1
+.dashboard-title
   height (100% / 10.5)
   position absolute
-  top 0
+  bottom 0
   left 0
-  font-size 4em
-  line-height 1em
+
+  h1
+    font-family LatoLight, Lato, Helvetica, sans-serif
+    margin 0
+    padding 0
+    font-size 3em
+    line-height 1em
+
+  p
+    margin calc(100vmax / 96) 0
+    font-size 1.4em
+    color $secondary
+
+.dashboard-logo
+  height (100% / 10.5)
+  width 100%
+  position absolute
+  bottom 0
+  right 0
+  text-align right
+
+  img
+    height 100%
 
 .block
   background-color $bg2
@@ -93,6 +87,59 @@ body
       width (100% / 8 * c)
   for r in 1 2 3 4
     &.r{r}
-      top (100% / 8 / 0.5625 * (r - 1) + 11.111111111%)
+      top (100% / 8 / 0.5625 * (r - 1))
     &.h{r}
       height (100% / 8 / 0.5625 * r)
+
+.centered
+  display flex
+  justify-content center
+  flex-direction column
+
+.block-title
+  padding-bottom calc(100vmax / 128)
+  h2
+    font-size 1.2em
+    font-weight bold
+    line-height 1em
+    padding calc(100vmax / 256)
+    margin 0
+
+  h3
+    font-size 1em
+    line-height 1em
+    font-weight normal
+    padding calc(100vmax / 256)
+    padding-top 0
+    margin 0
+    color $secondary
+    &:first-child
+      padding-top calc(100vmax / 256)
+
+.block-unit
+  &.danger
+    border-left calc(100vmax / 256) solid white
+  &.full
+    height 100%
+
+.block-value
+  font-size 5em
+  line-height 1em
+  text-align right
+  padding calc(100vmax / 196) calc(100vmax / 256) 0 0
+
+.block-value-caption
+  text-align right
+  font-size 1em
+  line-height 1.5em
+  font-weight normal
+  padding calc(100vmax / 256) calc(100vmax / 256) calc(100vmax / 110) 0
+  color $secondary
+
+.danger
+  background-color $danger
+  color white
+  .block-value-caption
+    color white
+  h3
+    color white
