@@ -346,7 +346,79 @@ module.exports.many = (key) => _inject.many(key)
 module.exports.clear = (key) => _inject.clear(key)
 module.exports.clearAll = () => _inject.clearAll()
 
-},{}],25:[function(require,module,exports) {
+},{}],222:[function(require,module,exports) {
+const h = require('snabbdom/h').default
+
+module.exports = (values) => {
+  let min = +Infinity
+  let max = -Infinity
+  for (let v of values) {
+    if (v < min) min = v
+    if (v > max) max = v
+  }
+  const y = (v) => 13 - (v - min) / (max - min) * 11
+  const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
+  const last = coords[coords.length - 1]
+  return h('svg.deltaline', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
+    h('polyline', { attrs: { points: coords.map((c) =>
+      `${c[0]},${c[1]}`).join(' ') } }),
+    h('circle', { attrs: { cx: last[0], cy: last[1], r: 2 } })
+  ])
+}
+
+},{"snabbdom/h":26}],223:[function(require,module,exports) {
+const h = require('snabbdom/h').default
+
+module.exports = (values) => {
+  let min = 0
+  let max = 0
+  for (let v of values) {
+    if (v < min) min = v
+    if (v > max) max = v
+  }
+  const y = (v) => 47 - (v - min) / (max - min) * 46
+  const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
+  const last = coords[coords.length - 1]
+  return h('svg.totalline', { attrs: { viewBox: '0 0 100 50', width: '100%', preserveAspectRatio: 'none' } }, [
+    h('polyline', { attrs: { points: coords.map((c) =>
+      `${c[0]},${c[1]}`).join(' ') } }),
+    h('polygon', { attrs: { points: `${coords.map((c) =>
+      `${c[0]},${c[1]}`).join(' ')} 97,${y(0)} 0,${y(0)}` } }),
+    h('circle', { attrs: { cx: last[0], cy: last[1], r: 2 } })
+  ])
+}
+
+},{"snabbdom/h":26}],224:[function(require,module,exports) {
+const h = require('snabbdom/h').default
+
+module.exports = (percentage) => {
+  return h('svg.bar', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
+    h('rect', { attrs: { x: 0, y: 0, width: percentage, height: 16 } })
+  ])
+}
+
+},{"snabbdom/h":26}],225:[function(require,module,exports) {
+const h = require('snabbdom/h').default
+
+module.exports = (up, down) => {
+  const c = [Math.max(down - up, 0), Math.max(up - down, 0)]
+  const children = []
+  if (up > 0) children.push(
+    h('rect.green', { attrs: { x: c[0], y: 0, width: up, height: 7 } }))
+  else {
+    const x = c[0] + (down > 0 ? -1 : 1)
+    children.push(h('line', { attrs: { x1: x, y1: 0, x2: x, y2: 8 } }))
+  }
+  if (down > 0) children.push(
+    h('rect.red', { attrs: { x: c[1], y: 9, width: down, height: 8 } }))
+  else {
+    const x = c[1] + (up > 0 ? -1 : 1)
+    children.push(h('line', { attrs: { x1: x, y1: 8, x2: x, y2: 16 } }))
+  }
+  return h('svg.delta', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, children)
+}
+
+},{"snabbdom/h":26}],25:[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function createElement(tagName) {
@@ -9443,75 +9515,26 @@ module.exports = MarkdownIt;
 
 module.exports = require('./lib/');
 
-},{"./lib/":156}],4:[function(require,module,exports) {
-const h = require('snabbdom/h').default
-const ql = require('odoql2')
-const inject = require('injectinto')
+},{"./lib/":156}],226:[function(require,module,exports) {
 const snabby = require('snabby')
 const markdownit = require('markdown-it')
 const md = require('markdown-it')({
   hmtl: true, breaks: true, linkify: true, typographer: true
 })
 
-const deltaline = (values) => {
-  let min = +Infinity
-  let max = -Infinity
-  for (let v of values) {
-    if (v < min) min = v
-    if (v > max) max = v
-  }
-  const y = (v) => 13 - (v - min) / (max - min) * 11
-  const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
-  const last = coords[coords.length - 1]
-  return h('svg.deltaline', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
-    h('polyline', { attrs: { points: coords.map((c) =>
-      `${c[0]},${c[1]}`).join(' ') } }),
-    h('circle', { attrs: { cx: last[0], cy: last[1], r: 2 } })
-  ])
-}
+module.exports = (s) =>
+  snabby([`<div class='markdown'>${md.render(s)}</div>`], [])
 
-const totalline = (values) => {
-  let min = 0
-  let max = 0
-  for (let v of values) {
-    if (v < min) min = v
-    if (v > max) max = v
-  }
-  const y = (v) => 47 - (v - min) / (max - min) * 46
-  const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
-  const last = coords[coords.length - 1]
-  return h('svg.totalline', { attrs: { viewBox: '0 0 100 50', width: '100%', preserveAspectRatio: 'none' } }, [
-    h('polyline', { attrs: { points: coords.map((c) =>
-      `${c[0]},${c[1]}`).join(' ') } }),
-    h('polygon', { attrs: { points: `${coords.map((c) =>
-      `${c[0]},${c[1]}`).join(' ')} 97,${y(0)} 0,${y(0)}` } }),
-    h('circle', { attrs: { cx: last[0], cy: last[1], r: 2 } })
-  ])
-}
+},{"snabby":151,"markdown-it":155}],4:[function(require,module,exports) {
+const h = require('snabbdom/h').default
+const ql = require('odoql2')
+const inject = require('injectinto')
 
-const bar = (percentage) => {
-  return h('svg.bar', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
-    h('rect', { attrs: { x: 0, y: 0, width: percentage, height: 16 } })
-  ])
-}
-
-const deltabar = (up, down) => {
-  const c = [Math.max(down - up, 0), Math.max(up - down, 0)]
-  const children = []
-  if (up > 0) children.push(
-    h('rect.green', { attrs: { x: c[0], y: 0, width: up, height: 7 } }))
-  else {
-    const x = c[0] + (down > 0 ? -1 : 1)
-    children.push(h('line', { attrs: { x1: x, y1: 0, x2: x, y2: 8 } }))
-  }
-  if (down > 0) children.push(
-    h('rect.red', { attrs: { x: c[1], y: 9, width: down, height: 8 } }))
-  else {
-    const x = c[1] + (up > 0 ? -1 : 1)
-    children.push(h('line', { attrs: { x1: x, y1: 8, x2: x, y2: 16 } }))
-  }
-  return h('svg.delta', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, children)
-}
+const deltaline = require('./deltaline')
+const totalline = require('./totalline')
+const bar = require('./bar')
+const deltabar = require('./deltabar')
+const markdown = require('./markdown')
 
 inject('page:default', ql.component({
   query: (state, params) => {
@@ -9621,8 +9644,7 @@ inject('page:default', ql.component({
             ])
           ])
         ]),
-        h('div.block.r2.c1.w1.h1',
-          snabby([`<div class='markdown'>${md.render(`
+        h('div.block.r2.c1.w1.h1', markdown(`
 # Title
 
 - one
@@ -9630,7 +9652,7 @@ inject('page:default', ql.component({
 - three
 
 [link](http://google.com/)
-`)}</div>`], [])),
+`)),
         h('div.block.r1.c1.w1.h1', [
           h('div.block-title', [
             h('h2', 'Release countdown'),
@@ -9835,7 +9857,7 @@ inject('page:default', ql.component({
   }
 }))
 
-},{"snabbdom/h":26,"odoql2":28,"injectinto":21,"snabby":151,"markdown-it":155}],20:[function(require,module,exports) {
+},{"snabbdom/h":26,"odoql2":28,"injectinto":21,"./deltaline":222,"./totalline":223,"./bar":224,"./deltabar":225,"./markdown":226}],20:[function(require,module,exports) {
 module.exports = (initial) => {
   const listeners = {}
   const unhandled = []
