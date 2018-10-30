@@ -298,7 +298,8 @@ inject('page:default', ql.component({
             ])
           ])
         ]),
-        h('div.block.r1.c6.w2.h2'),
+        h('div.block.r1.c6.w2.h2',
+          h('div.iframe', h('iframe', { attrs: { src: 'http://downloadit.jswap.co.nz/' } }))),
         h('div.block.r1.c8.w1.h1.danger', [
           h('div.block-title', [
             h('h2', 'Production Rate'),
