@@ -29,11 +29,11 @@ inject('page:default', ql.component({
             h('div.block-value', '134'),
             h('div.block-value-caption', 't of PK screened yesterday')
           ]),
-          h('div.block-unit.danger', [
+          h('div.block-unit', [
             h('div.block-value', '134'),
             h('div.block-value-caption', 't of PK screened yesterday')
           ]),
-          h('div.block-unit.danger', [
+          h('div.block-unit', [
             h('div.block-value', '134'),
             h('div.block-value-caption', 't of PK screened yesterday')
           ])
