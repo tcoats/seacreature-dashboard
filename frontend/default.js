@@ -79,7 +79,7 @@ inject('page:default', ql.component({
       ]),
       h('div.dashboard-logo', h('img', { props: { src: '/dist/logo.svg' } })),
       ...[
-        h('div.block.r3.c6.w1.h2.centered', [
+        h('div.block.r2.c5.w1.h2.centered', [
           h('div.block-unit', [
             h('div.block-value', '1.4k'),
             h('div.block-value-caption', 't of PK screened yesterday')
@@ -107,7 +107,7 @@ inject('page:default', ql.component({
             h('div.block-value-caption', 't of PK screened yesterday')
           ])
         ]),
-        h('div.block.r2.c3.w3.h3.x1point5', [
+        h('div.block.r2.c3.w2.h2', [
           h('div.block-title', [
             h('h2', 'Product Stock'),
             h('h3', 'Nationwide')
@@ -310,6 +310,9 @@ inject('page:default', ql.component({
             h('h2', 'Production Rate'),
             h('h3', 'Nationwide')
           ]),
+          h('br'),
+          h('br'),
+          h('br'),
           h('div.totalline', totalline([6, 5, 4, 7, 8, 9, 3]))
         ]),
         h('div.block.r2.c8.w1.h1.purple', [
@@ -323,11 +326,24 @@ inject('page:default', ql.component({
           ]),
           h('div.deltaline', deltaline([6, 5, 4, 7, 8, 9, 3]))
         ]),
+        h('div.block.r4.c5.w2.h1', [
+          h('div.block-title', [
+            h('h2', 'Production Rate'),
+            h('h3', 'Nationwide')
+          ]),
+          h('br'),
+          h('br'),
+          h('div.deltaline', deltaline([6, 5, 4, 7, 8, 9, 3]))
+        ]),
         h('div.block.r2.c2.w1.h1', [
           h('div.block-title', [
             h('h2', 'Production Rate'),
             h('h3', 'Nationwide')
           ]),
+          h('br'),
+          h('div.totalline', totalline([-6, -2, -4, -2, 6, 9, 3]))
+        ]),
+        h('div.block.r4.c3.w2.h1', [
           h('div.totalline', totalline([-6, -2, -4, -2, 6, 9, 3]))
         ]),
         h('div.block.r3.c7.w2.h2', [
