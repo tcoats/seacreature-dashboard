@@ -14,7 +14,7 @@ const deltaline = (values) => {
     if (v < min) min = v
     if (v > max) max = v
   }
-  const y = (v) => 14 - (v - min) / (max - min) * 12
+  const y = (v) => 13 - (v - min) / (max - min) * 11
   const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
   const last = coords[coords.length - 1]
   return h('svg.deltaline', { attrs: { viewBox: '0 0 100 16', width: '100%', preserveAspectRatio: 'none' } }, [
@@ -31,7 +31,7 @@ const totalline = (values) => {
     if (v < min) min = v
     if (v > max) max = v
   }
-  const y = (v) => 48 - (v - min) / (max - min) * 46
+  const y = (v) => 47 - (v - min) / (max - min) * 46
   const coords = values.map((v, i) => [(i / (values.length - 1)) * 97, y(v)])
   const last = coords[coords.length - 1]
   return h('svg.totalline', { attrs: { viewBox: '0 0 100 50', width: '100%', preserveAspectRatio: 'none' } }, [
@@ -53,13 +53,13 @@ const deltabar = (up, down) => {
   const c = [Math.max(down - up, 0), Math.max(up - down, 0)]
   const children = []
   if (up > 0) children.push(
-    h('rect.green', { attrs: { x: c[0], y: 0, width: up, height: 8 } }))
+    h('rect.green', { attrs: { x: c[0], y: 0, width: up, height: 7 } }))
   else {
     const x = c[0] + (down > 0 ? -1 : 1)
     children.push(h('line', { attrs: { x1: x, y1: 0, x2: x, y2: 8 } }))
   }
   if (down > 0) children.push(
-    h('rect.red', { attrs: { x: c[1], y: 8, width: down, height: 8 } }))
+    h('rect.red', { attrs: { x: c[1], y: 9, width: down, height: 8 } }))
   else {
     const x = c[1] + (up > 0 ? -1 : 1)
     children.push(h('line', { attrs: { x1: x, y1: 8, x2: x, y2: 16 } }))
@@ -211,6 +211,11 @@ inject('page:default', ql.component({
                 h('tr', [
                   h('th', 'Dried Distiller Grains'),
                   h('td.deltaline', deltaline([6, 5, 4, 7, 8, 9, 3])),
+                  h('td', '27.5kt')
+                ]),
+                h('tr', [
+                  h('th', 'Dried Distiller Grains'),
+                  h('td.deltaline', deltaline([6, 5, 4, 7, 8, 9, 13])),
                   h('td', '27.5kt')
                 ]),
                 h('tr.danger', [

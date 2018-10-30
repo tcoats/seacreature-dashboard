@@ -627,6 +627,7 @@ td.deltaline {
 }
 .block {
   background-color: #1a2b34;
+  background: linear-gradient(to bottom right, #243944, #1a2b34);
   border: calc(100vmax / 500) solid #16232a;
   position: absolute;
 }
