@@ -1,6 +1,11 @@
 const h = require('snabbdom/h').default
 const ql = require('odoql2')
 const inject = require('injectinto')
+const snabby = require('snabby')
+const markdownit = require('markdown-it')
+const md = require('markdown-it')({
+  hmtl: true, breaks: true, linkify: true, typographer: true
+})
 
 const deltaline = (values) => {
   let min = +Infinity
@@ -170,12 +175,16 @@ inject('page:default', ql.component({
             ])
           ])
         ]),
-        h('div.block.r2.c1.w1.h1.danger', [
-          h('div.block-unit.full.centered', h('div.block-unit', [
-            h('div.block-value', '134'),
-            h('div.block-value-caption', 't of PK screened yesterday')
-          ]))
-        ]),
+        h('div.block.r2.c1.w1.h1',
+          snabby([`<div class='markdown'>${md.render(`
+# Title
+
+- one
+- two
+- three
+
+[link](http://google.com/)
+`)}</div>`], [])),
         h('div.block.r1.c1.w1.h1', [
           h('div.block-title', [
             h('h2', 'Release countdown'),
@@ -289,12 +298,7 @@ inject('page:default', ql.component({
             ])
           ])
         ]),
-        h('div.block.r1.c6.w2.h2.x2', [
-          h('div.block-unit.full.centered', h('div.block-unit', [
-            h('div.block-value', '134'),
-            h('div.block-value-caption', 't of PK screened yesterday')
-          ]))
-        ]),
+        h('div.block.r1.c6.w2.h2'),
         h('div.block.r1.c8.w1.h1.danger', [
           h('div.block-title', [
             h('h2', 'Production Rate'),

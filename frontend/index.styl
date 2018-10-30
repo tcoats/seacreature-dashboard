@@ -31,8 +31,8 @@ body
 
 .wrapper
   width 100vmax
-  min-width 622px
-  min-height 350px
+  min-width 840px
+  min-height 472.5px
   height 64em
   margin 0 auto
   padding calc(100vmax / 96)
@@ -45,6 +45,22 @@ body
   height 100%
   margin 0 auto
   position relative
+  h1, h2, h3
+    line-height 1em
+    padding 0.4em 0
+    margin 0
+  h1
+    font-size 1.4em
+    font-weight bold
+
+  h2
+    font-size 1.2em
+    font-weight bold
+
+  h3
+    font-size 1em
+    font-weight normal
+    opacity 0.6
 
 .dashboard-title
   height (100% / 10.5)
@@ -97,7 +113,7 @@ body
   fill $orange
   stroke $orange
 
-.danger
+.danger, .block.danger, .block-unit.danger
   background-color $danger
   color white
   .block-value-caption
@@ -107,6 +123,8 @@ body
   th
     color white
     border-left 0.4em solid white
+  a
+    color white
   .green
     color white
     fill white
@@ -127,6 +145,9 @@ body
     color white
     fill white
     stroke white
+
+a
+  color $blue
 
 // sizes
 .xpoint5
@@ -191,6 +212,11 @@ td
   &.deltaline
     padding 0
 
+.markdown
+  padding 0.4em
+  ul, ol
+    padding-left 2em
+
 .block
   background-color $bg2
   border calc(100vmax / 500) solid $bg1
@@ -214,32 +240,19 @@ td
 .block-title
   padding-bottom 0.4em
   h1
-    font-size 1.4em
-    font-weight bold
-    line-height 1em
     padding 0.4em
-    margin 0
     & + h2, & + h3
       padding-top 0.1em
       margin-top -0.3em
 
   h2
-    font-size 1.2em
-    font-weight bold
-    line-height 1em
     padding 0.4em
-    margin 0
     & + h3
       padding-top 0em
       margin-top -0.3em
 
   h3
-    font-size 1em
-    line-height 1em
-    font-weight normal
     padding 0.4em
-    margin 0
-    opacity 0.6
 
 .block-unit
   &.danger

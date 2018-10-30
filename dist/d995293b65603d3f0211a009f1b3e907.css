@@ -387,8 +387,8 @@ body {
 }
 .wrapper {
   width: 100vmax;
-  min-width: 622px;
-  min-height: 350px;
+  min-width: 840px;
+  min-height: 472.5px;
   height: 64em;
   margin: 0 auto;
   padding: calc(100vmax / 96);
@@ -401,6 +401,26 @@ body {
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+.dashboard h1,
+.dashboard h2,
+.dashboard h3 {
+  line-height: 1em;
+  padding: 0.4em 0;
+  margin: 0;
+}
+.dashboard h1 {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.dashboard h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.dashboard h3 {
+  font-size: 1em;
+  font-weight: normal;
+  opacity: 0.6;
 }
 .dashboard-title {
   height: 9.523809523809524%;
@@ -456,44 +476,70 @@ body {
   fill: #fd9148;
   stroke: #fd9148;
 }
-.danger {
+.danger,
+.block.danger,
+.block-unit.danger {
   background-color: #a90015;
   color: #fff;
 }
-.danger .block-value-caption {
+.danger .block-value-caption,
+.block.danger .block-value-caption,
+.block-unit.danger .block-value-caption {
   color: #fff;
 }
-.danger h3 {
+.danger h3,
+.block.danger h3,
+.block-unit.danger h3 {
   color: #fff;
 }
-.danger th {
+.danger th,
+.block.danger th,
+.block-unit.danger th {
   color: #fff;
   border-left: 0.4em solid #fff;
 }
-.danger .green {
+.danger a,
+.block.danger a,
+.block-unit.danger a {
+  color: #fff;
+}
+.danger .green,
+.block.danger .green,
+.block-unit.danger .green {
   color: #fff;
   fill: #fff;
   stroke: #fff;
 }
-.danger .blue {
+.danger .blue,
+.block.danger .blue,
+.block-unit.danger .blue {
   color: #fff;
   fill: #fff;
   stroke: #fff;
 }
-.danger .red {
+.danger .red,
+.block.danger .red,
+.block-unit.danger .red {
   color: #fff;
   fill: #fff;
   stroke: #fff;
 }
-.danger .purple {
+.danger .purple,
+.block.danger .purple,
+.block-unit.danger .purple {
   color: #fff;
   fill: #fff;
   stroke: #fff;
 }
-.danger .orange {
+.danger .orange,
+.block.danger .orange,
+.block-unit.danger .orange {
   color: #fff;
   fill: #fff;
   stroke: #fff;
+}
+a {
+  color: #6297d0;
 }
 .xpoint5 {
   font-size: 0.5em;
@@ -571,6 +617,13 @@ td.bar {
 }
 td.deltaline {
   padding: 0;
+}
+.markdown {
+  padding: 0.4em;
+}
+.markdown ul,
+.markdown ol {
+  padding-left: 2em;
 }
 .block {
   background-color: #1a2b34;
@@ -658,11 +711,7 @@ td.deltaline {
   padding-bottom: 0.4em;
 }
 .block-title h1 {
-  font-size: 1.4em;
-  font-weight: bold;
-  line-height: 1em;
   padding: 0.4em;
-  margin: 0;
 }
 .block-title h1 + h2,
 .block-title h1 + h3 {
@@ -670,23 +719,14 @@ td.deltaline {
   margin-top: -0.3em;
 }
 .block-title h2 {
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 1em;
   padding: 0.4em;
-  margin: 0;
 }
 .block-title h2 + h3 {
   padding-top: 0em;
   margin-top: -0.3em;
 }
 .block-title h3 {
-  font-size: 1em;
-  line-height: 1em;
-  font-weight: normal;
   padding: 0.4em;
-  margin: 0;
-  opacity: 0.6;
 }
 .block-unit.danger {
   border-left: 0.4em solid #fff;
