@@ -1,6 +1,7 @@
 const h = require('snabbdom/h').default
 
 module.exports = (values) => {
+  if (values.length < 2) return h('svg.totalline')
   let min = 0
   let max = 0
   for (let v of values) {

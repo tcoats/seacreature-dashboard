@@ -1,11 +1,11 @@
 {
   "name": "seacreature-dashboard",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./backend/index.js",
   "scripts": {
     "debug": "parcel watch frontend/index.html --public-url ./dist/ --no-hmr",
     "deploy": "parcel build frontend/index.html",
-    "start": "node ./backend/server"
+    "start": "node ./"
   },
   "repository": "git@github.com:tcoats/seacreature-dashboard.git",
   "author": "Thomas Coats <github@voodoolabs.net>",
@@ -13,20 +13,24 @@
   "dependencies": {
     "autobahn": "^18.10.2",
     "compression": "^1.7.3",
+    "cpu-stat": "^2.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "injectinto": "^1.6.0",
     "markdown-it": "^8.4.2",
-    "normalize.css": "^8.0.0",
+    "normalize.css": "^8.0.1",
+    "numeral": "^2.0.6",
     "odo-hub": "^4.0.2",
-    "odo-journal": "^1.8.0",
+    "odo-journal": "^1.9.2",
     "odo-route": "^1.7.0",
     "odo-wamp": "^1.1.0",
-    "odoql2": "^2.0.0",
-    "page": "^1.11.0",
+    "odoql2": "^2.1.0",
+    "page": "^1.11.3",
+    "seacreature": "^1.1.1",
     "snabbdom": "^0.7.2",
     "snabby": "^1.0.0",
     "stylus": "^0.54.5",
+    "wampy": "^6.2.0",
     "ws": "^6.1.0"
   }
 }

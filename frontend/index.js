@@ -22,6 +22,7 @@ const Hub = require('odo-hub')
 let state = {}
 let params = {
   websocket: { isconnected: false },
+  lake: {},
   page: 'default'
 }
 const hub = Hub()
@@ -44,44 +45,26 @@ hub.on('update', p => {
   exe.run(inject.one(`page:${params.page}`).query(state, params) || {})
 })
 
-const socket = Hub()
-const autobahn = require('autobahn')
-const conn = new autobahn.Connection({
-  url: 'ws://localhost:8080/wamp', realm: 'seacreature.dashboard'})
-let session = null
 let currentversion = null
-let onopen = []
-conn.onopen = (_session, details) => {
-  session = _session
-  hub.emit('update', { websocket: { isconnected: true }})
-  socket.call('server version').then((version) => {
-    if (currentversion == null) {
-      currentversion = version
-      return
-    } else if (currentversion != version) {
-      location.reload(true)
-    }
-  }).catch((err) => console.error(err))
-  for (let cb of onopen) cb()
-  onopen = []
-}
-conn.onclose = (reason, details) => {
-  session = null
-  hub.emit('update', { websocket: { isconnected: false }})
-}
-conn.open()
-
-socket.call = (...args) =>
-  session ? session.call(...args)
-  : Promise.reject('Socket not open')
-socket.publish = (...args) =>
-  session ? session.publish(...args)
-  : Promise.reject('Socket not open')
-socket.subscribe = (topic, fn) => {
-  const bind = () => session.subscribe(topic, fn)
-  if (session) return bind()
-  onopen.push(bind)
-}
+const onConnect = () => socket.call('com.seacreature.version', null,  (params) => {
+  const version = params.argsList[0]
+  if (currentversion != null && currentversion != version) location.reload(true)
+  currentversion = version
+  hub.emit('update', { websocket: { isconnected: true } })
+})
+const onDisconnect = () => hub.emit('update', { websocket: { isconnected: false } })
+const wampy = require('wampy')
+const socket = new wampy.Wampy('/wamp', {
+  realm: 'seacreature.dashboard',
+  autoReconnect: true,
+  maxRetries: Infinity,
+  onConnect: onConnect,
+  onClose: onDisconnect,
+  onReconnect: onDisconnect,
+  onReconnectSuccess: onConnect
+})
+socket.subscribe('com.seacreature.lake', (params) =>
+  hub.emit('update', { lake: params.argsList[0] }))
 
 // execute pods
 for (let pod of inject.many('pod')) pod(hub, exe, socket)

@@ -32,6 +32,7 @@ inject('socketServer', wsServer)
 inject('wamp', require('odo-wamp')(wsServer))
 
 require('./websockets')
+require('./lake')
 require('./query')
 
 for (let pod of inject.many('pod')) pod()

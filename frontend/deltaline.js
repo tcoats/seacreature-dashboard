@@ -1,6 +1,7 @@
 const h = require('snabbdom/h').default
 
 module.exports = (values) => {
+  if (values.length < 2) return h('svg.deltaline')
   let min = +Infinity
   let max = -Infinity
   for (let v of values) {

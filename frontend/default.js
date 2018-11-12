@@ -2,6 +2,8 @@ const h = require('snabbdom/h').default
 const ql = require('odoql2')
 const inject = require('injectinto')
 
+const numeral = require('numeral')
+
 const deltaline = require('./deltaline')
 const totalline = require('./totalline')
 const bar = require('./bar')
@@ -14,11 +16,11 @@ inject('page:default', ql.component({
   },
   render: (state, params, hub) => {
     return h('div.wrapper', h('div.dashboard', [
+      h('div.dashboard-logo', h('img', { props: { src: '/dist/logo.svg' } })),
       h('div.dashboard-title', [
         h('h1', 'Super Important Dashboard'),
         h('p', 'Some text here to describe the stuff.')
       ]),
-      h('div.dashboard-logo', h('img', { props: { src: '/dist/logo.svg' } })),
       ...[
         h('div.block.r2.c5.w1.h2.centered', [
           h('div.block-unit', [
@@ -44,8 +46,15 @@ inject('page:default', ql.component({
             h('h3', 'Caption goes here.')
           ]),
           h('div.block-unit', [
-            h('div.block-value', '1.4k'),
-            h('div.block-value-caption', 't of PK screened yesterday')
+            h('div.block-value', params.lake.cpu
+              ? `${numeral(params.lake.cpu.value).format('0')}%`
+              : '1.4k'),
+            h('div.block-value-caption', 't of PK screened yesterday'),
+            ...[
+              params.lake.cpuhistory
+              ? h('div.deltaline', deltaline(params.lake.cpuhistory.value))
+              : null
+            ]
           ])
         ]),
         h('div.block.r2.c3.w2.h2', [
