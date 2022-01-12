@@ -17,7 +17,7 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "injectinto": "^1.6.0",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "normalize.css": "^8.0.1",
     "numeral": "^2.0.6",
     "odo-hub": "^4.0.2",
